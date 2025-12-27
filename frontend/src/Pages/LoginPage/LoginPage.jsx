@@ -4,6 +4,7 @@ import {
   Stack,
   Text,
 } from "@mantine/core";
+import "@mantine/core/styles.css";
 import { GoogleLogin } from "@react-oauth/google";
 import { showNotification } from "@mantine/notifications";
 import Service from "../../utils/http";
@@ -36,10 +37,10 @@ export default function LoginPage() {
 
       dispatch(
         setUser({
-          name: data.data.name,
-          avatar: data.data.avatar,
-          token: data.data.token,
-          email: data.data.email,
+          name: data.name,
+          avatar: data.avatar,
+          token: data.token,
+          email: data.email,
           isLoggedIn: true,
         })
       );
@@ -91,7 +92,7 @@ export default function LoginPage() {
           <Text c="white" my="sm" size="lg">
             Login to{" "}
             <Text component="span" fw={700} c="white">
-              Being Zero
+              Smart Shortener
             </Text>
           </Text>
           <Stack align="center" spacing="lg">
@@ -100,13 +101,6 @@ export default function LoginPage() {
               theme="filled_black"
               useOneTap={true}
               onSuccess={googleResponse}
-              onError={() =>
-                showNotification({
-                  title: "Error",
-                  message: "Google Sign-In failed",
-                  color: "red",
-                })
-              }
             />
           </Stack>
         </Card>
