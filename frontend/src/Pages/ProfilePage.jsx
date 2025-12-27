@@ -64,7 +64,7 @@ export default function Profile() {
                     p="xl"
                     shadow="xl"
                     style={{
-                        background: "rgba(255, 255, 255, 0.85)",
+                        background: "rgba(255, 255, 255, 0.12)",
                         textAlign: "center",
                     }}
                 >
